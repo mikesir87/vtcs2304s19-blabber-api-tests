@@ -3,4 +3,5 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install
 COPY test ./test
-CMD sh -c "sleep 5 && yarn start"
+ENV SLEEP_TIMER 5
+CMD sh -c "sleep $SLEEP_TIMER && yarn start"
